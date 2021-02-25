@@ -2,69 +2,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-	//----------------------SLIDER-hero----------------------
-		// var mySwiper = new Swiper('.hero__slider', {
-		// 	slidesPerView: 1,
-		// 	spaceBetween: 30,
-		// 	loop: true,
-		// 	effect: 'fade',
-		// 	autoplay: {
-		// 		delay: 5000,
-		// 	},
-		// 	pagination: {
-		// 		el: '.hero__pagination',
-		// 		clickable: 'true',
-		// 	},
-		// 	navigation: {
-		// 		nextEl: '.hero__next',
-		// 		prevEl: '.hero__prev',
-		// 	},
-		// 	breakpoints: {
-		// 		320: {
-		// 			slidesPerView: 2,
-		// 			spaceBetween: 20
-		// 		},
-		// 	}
-		// });
-
-	//----------------------SCROLL-----------------------
-		const scrollTo = (scrollTo) => {
-			let list = document.querySelector(scrollTo);
-			list = '.' + list.classList[0]  + ' li a[href^="#"';
-	
-			document.querySelectorAll(list).forEach(linkItem => {
-	
-				link.addEventListener('click', function(e) {
-						e.preventDefault();
-						const scrollMenu = document.querySelector(scrollTo);
-	
-						let href = this.getAttribute('href').substring(1);
-	
-						const scrollTarget = document.getElementById(href);
-	
-						// const topOffset = scrollMenu.offsetHeight;
-						const topOffset = 70;
-						const elementPosition = scrollTarget.getBoundingClientRect().top;
-						const offsetPosition = elementPosition - topOffset;
-	
-						window.scrollBy({
-								top: offsetPosition,
-								behavior: 'smooth'
-						});
-	
-						
-						let button = document.querySelector('.hamburger'),
-								nav = document.querySelector('.header__nav'),
-								header = document.querySelector('.header');
-	
-						button.classList.remove('hamburger--active');
-						nav.classList.remove('header__nav--active');
-						header.classList.remove('header--menu');
-				});
-			});
-		};
-		// scrollTo('.header__nav');
-	
 	//----------------------FIXED-HEADER-----------------------
 		const headerFixed = (headerFixed, headerActive) => {
 			const header =  document.querySelector(headerFixed),

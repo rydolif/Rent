@@ -12,7 +12,7 @@ let paths = {
 		src: [
 			// 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
 			// 'app/libs/jquery.fancybox.min.js', // swiper sider
-			'node_modules/swiper/swiper-bundle.js', // swiper sider
+			// 'node_modules/swiper/swiper-bundle.js', // swiper sider
 			baseDir + '/js/app.js' // app.js. Always at the end
 		],
 		dest: baseDir + '/js',
@@ -78,7 +78,7 @@ function styles() {
 	.pipe(eval(preprocessor)())
 	.pipe(concat(paths.cssOutputName))
 	.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
-	.pipe(cleancss( {level: { 1: { specialComments: 0 } },/* format: 'beautify' */ }))
+	.pipe(cleancss( {level: { 1: { specialComments: 0 } }, format: 'beautify' }))
 	.pipe(dest(paths.styles.dest))
 	.pipe(browserSync.stream())
 }
