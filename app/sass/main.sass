@@ -192,9 +192,60 @@
 	z-index: 1000
 	+transition
 
+	.navbar
+		width: 100%
+
+	.navbar-collapse
+		flex-grow: 0
+		width: 60%
+
+		+r(767)
+			flex-grow: 1
+			padding: 20px
+			text-align: right
+
+	.nav-item
+		margin-right: 40px
+
+		+r(767)
+			margin-right: 0
+			margin-bottom: 10px
+
+	.navbar-light .navbar-nav .nav-link
+		position: relative
+		color: $title
+		font-size: 16px
+		padding: 0
+		z-index: 1
+
+		+r(992)
+			font-size: 14px
+
+		+r(767)
+			font-size: 20px
+
+		&:hover
+			color: $title
+
+			&::before
+				height: 8px
+
+		&::before
+			content: ''
+			position: absolute
+			bottom: 0
+			left: -5%
+			right: -5%
+			width: 110%
+			height: 0
+			background-color: $accent
+			z-index: -1
+			+transition
+
 	&__btn
-		+r(480)
-			display: none
+		+r(767)
+			margin-right: 0
+			margin-left: auto
 
 	&__container
 		+between
@@ -212,79 +263,79 @@
 			width: 100%
 			height: auto
 
-	&__nav
-		+r(767)
-			position: fixed
-			right: -100%
-			top: 65px
-			background-color: #F6F9FE
-			height: 100vh
-			width: 100vw
-			max-width: 320px
-			z-index: 100
-			padding: 40px 40px 90px
-			box-shadow: 0 8px 8px 0 rgba(#000, .3)
-			overflow: auto
-			+transition
+	// &__nav
+	// 	+r(767)
+	// 		position: fixed
+	// 		right: -100%
+	// 		top: 65px
+	// 		background-color: #F6F9FE
+	// 		height: 100vh
+	// 		width: 100vw
+	// 		max-width: 320px
+	// 		z-index: 100
+	// 		padding: 40px 40px 90px
+	// 		box-shadow: 0 8px 8px 0 rgba(#000, .3)
+	// 		overflow: auto
+	// 		+transition
 
-		ul
-			display: flex
-			gap: 40px
+	// 	ul
+	// 		display: flex
+	// 		gap: 40px
 
-			+r(1200)
-				gap: 30px
+	// 		+r(1200)
+	// 			gap: 30px
 
-			+r(767)
-				gap: 15px
-				flex-direction: column
-				align-items: flex-end
-				margin-bottom: 30px
+	// 		+r(767)
+	// 			gap: 15px
+	// 			flex-direction: column
+	// 			align-items: flex-end
+	// 			margin-bottom: 30px
 
-			a
-				position: relative
-				color: $title
-				font-size: 16px
+	// 		a
+	// 			position: relative
+	// 			color: $title
+	// 			font-size: 16px
 
-				+r(992)
-					font-size: 14px
+	// 			+r(992)
+	// 				font-size: 14px
 
-				+r(767)
-					font-size: 20px
+	// 			+r(767)
+	// 				font-size: 20px
 
-				&:hover
-					color: $title
+	// 			&:hover
+	// 				color: $title
 
-					&::before
-						height: 8px
+	// 				&::before
+	// 					height: 8px
 
-				&::before
-					content: ''
-					position: absolute
-					bottom: 0
-					left: -5%
-					right: -5%
-					width: 110%
-					height: 0
-					background-color: $accent
-					z-index: -1
-					+transition
+	// 			&::before
+	// 				content: ''
+	// 				position: absolute
+	// 				bottom: 0
+	// 				left: -5%
+	// 				right: -5%
+	// 				width: 110%
+	// 				height: 0
+	// 				background-color: $accent
+	// 				z-index: -1
+	// 				+transition
 
-		&_btn
-			display: none
+	// 	&_btn
+	// 		display: none
 
-			+r(767)
-				display: flex
-				justify-content: flex-end
+	// 		+r(767)
+	// 			display: flex
+	// 			justify-content: flex-end
 
-		&--active
-			right: 0
+	// 	&--active
+	// 		right: 0
 
-	&--active
-		padding: 10px 0
-		box-shadow: 0 0 8px 0 rgba(#000, .3)
+	// &--active
+	// 	padding: 10px 0
+	// 	box-shadow: 0 0 8px 0 rgba(#000, .3)
 
-		.header__nav
-			top: 55px
+	// 	.header__nav
+	// 		top: 55px
 
 
 .hero
