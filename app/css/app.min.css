@@ -55,9 +55,11 @@ p {
 abbr[data-original-title],
 abbr[title] {
   text-decoration: underline;
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
+  -webkit-text-decoration-skip-ink: none;
   text-decoration-skip-ink: none
 }
 address {
@@ -324,9 +326,25 @@ body {
   flex-direction: column;
   justify-content: space-between
 }
+::-moz-selection {
+  background-color: #0fdbae;
+  color: #fff
+}
 ::selection {
   background-color: #0fdbae;
   color: #fff
+}
+::-webkit-input-placeholder {
+  color: #666
+}
+::-moz-placeholder {
+  color: #666
+}
+:-ms-input-placeholder {
+  color: #666
+}
+::-ms-input-placeholder {
+  color: #666
 }
 ::placeholder {
   color: #666
@@ -400,6 +418,26 @@ textarea:required:valid {
   box-shadow: none;
   -webkit-appearance: none
 }
+input::-webkit-input-placeholder,
+select::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #939cad
+}
+input::-moz-placeholder,
+select::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #939cad
+}
+input:-ms-input-placeholder,
+select:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #939cad
+}
+input::-ms-input-placeholder,
+select::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  color: #939cad
+}
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
@@ -411,6 +449,7 @@ label.error {
   right: 25px;
   left: 25px;
   transition: all .3s;
+  -webkit-animation: error .3s linear 1 forwards;
   animation: error .3s linear 1 forwards;
   color: #fff;
   text-align: center;
@@ -430,6 +469,9 @@ label.error::before {
   border-right: 4px solid transparent;
   border-top: 4px solid transparent
 }
+.container {
+  max-width: 1200px
+}
 .btn,
 .form__btn_button {
   position: relative;
@@ -440,9 +482,10 @@ label.error::before {
   align-items: center;
   height: 45px;
   font-size: 16px;
-  color: #0fdbae;
   font-weight: 700;
   border-radius: 5px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   padding: 0 65px;
   background-color: #0fdbae;
@@ -497,6 +540,7 @@ label.error::before {
   position: absolute;
   right: 0;
   top: 50%;
+  -webkit-transform: translate(0,-50%);
   transform: translate(0,-50%);
   width: 12px;
   height: 2px;
@@ -539,11 +583,13 @@ label.error::before {
 .hamburger--active .hamburger__item::before {
   top: 0;
   width: 25px;
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg)
 }
 .hamburger--active .hamburger__item::after {
   top: 0;
   width: 25px;
+  -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg)
 }
 .h1,
@@ -843,6 +889,7 @@ label.error::before {
   position: absolute;
   top: 0;
   left: 50%;
+  -webkit-transform: translate(-50%,0);
   transform: translate(-50%,0);
   max-width: 90%
 }
@@ -855,6 +902,7 @@ label.error::before {
   .info__item img {
     position: relative;
     left: 0;
+    -webkit-transform: translate(0,0);
     transform: translate(0,0);
     margin-bottom: 15px
   }
@@ -1171,12 +1219,20 @@ label.error::before {
   padding: 0 15px;
   border-radius: 5px
 }
-.form__input::placeholder {
+.form__input::-webkit-input-placeholder {
   line-height: 45px
 }
-.form__input:focus {
-  border-color: #0fdbae!important;
-  box-shadow: 0 0 5px 0 rgba(15,219,174,.3)!important
+.form__input::-moz-placeholder {
+  line-height: 45px
+}
+.form__input:-ms-input-placeholder {
+  line-height: 45px
+}
+.form__input::-ms-input-placeholder {
+  line-height: 45px
+}
+.form__input::placeholder {
+  line-height: 45px
 }
 .form__input._error {
   box-shadow: 0 0 4px 0 red;
@@ -1201,6 +1257,7 @@ label.error::before {
 }
 .form__options_label::before {
   content: '';
+  -ms-grid-row-align: start;
   align-self: start;
   flex: 0 0 24px;
   height: 24px;
@@ -1217,6 +1274,7 @@ label.error::before {
   height: 16px;
   border-radius: 50%;
   background-color: #fff;
+  -webkit-transform: scale(0);
   transform: scale(0);
   transition: all .6s
 }
@@ -1224,6 +1282,7 @@ label.error::before {
   display: none
 }
 .form__options_input:checked + .form__options_label::after {
+  -webkit-transform: scale(1);
   transform: scale(1)
 }
 .form__btn {
@@ -1242,6 +1301,7 @@ label.error::before {
   right: 25px;
   left: 25px;
   transition: all .3s;
+  -webkit-animation: error .3s linear 1 forwards;
   animation: error .3s linear 1 forwards;
   color: #fff;
   text-align: center;
@@ -1250,6 +1310,7 @@ label.error::before {
   border-radius: 10px;
   z-index: 1;
   font-size: 12px;
+  -webkit-animation: opacity 3s 0s;
   animation: opacity 3s 0s;
   opacity: 0;
   transition: 0
@@ -1264,6 +1325,17 @@ label.error::before {
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
   border-top: 4px solid transparent
+}
+@-webkit-keyframes opacity {
+  0% {
+    opacity: 1
+  }
+  90% {
+    opacity: 1
+  }
+  100% {
+    opacity: 0
+  }
 }
 @keyframes opacity {
   0% {
